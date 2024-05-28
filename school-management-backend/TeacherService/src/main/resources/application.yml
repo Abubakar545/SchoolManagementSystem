@@ -1,0 +1,40 @@
+# Configuration for connecting to a MySQL database
+
+server:
+  port: 8082
+spring:
+  application:
+    name: TEACHER-SERVICE
+  datasource:
+    # URL of the MySQL database server
+    url: jdbc:mysql://localhost:3306/school_management_db
+    # Username for the database
+    username: ${DB_USERNAME}
+    # Password for the database (store securely in environment variables)
+    password: ${DB_PASSWORD}  # Environment variable for password
+    # Driver class name for connecting to MySQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA (Java Persistence API) configuration
+  jpa:
+    # Hibernate configuration
+    hibernate:
+      # Set DDL schema update strategy (update: automatically update schema based on entity classes)
+      ddl-auto: update
+      # Enable logging of generated SQL statements for debugging purposes (set to false in production)
+      show-sql: true
+      # Additional Hibernate properties
+      properties:
+        hibernate:
+          # Dialect for MySQL 8 (adjust based on your MySQL version)
+          dialect: org.hibernate.dialect.MySQL8Dialect
+          # Connection pool size (optional, adjust based on application needs)
+          connection.pool_size: 5
+          # Other Hibernate properties as needed
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka
+
+

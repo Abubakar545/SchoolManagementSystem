@@ -1,0 +1,56 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+  config:
+    import: "optional:configserver:http://localhost:8091/"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # Enable service discovery
+          lowerCaseServiceId: true
+      routes:
+        - id: student-service
+          uri: lb://STUDENT-SERVICE
+          predicates:
+            - Path=/api/students/**
+        - id: teacher-service
+          uri: lb://TEACHER-SERVICE
+          predicates:
+            - Path=/api/teachers/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "School Management Service Gateway Server Application"
+    version: "1.0.0"
+
+logging:
+  level:
+    com:
+      azka:
+        schoolmanagementsystem: DEBUG
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: "http://localhost:8090/eureka/"

@@ -1,0 +1,25 @@
+/* StudentListItem.css */
+.student-list-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .student-list-item img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 16px;
+  }
+  
+  .student-list-item .name {
+    font-weight: bold;
+  }
+  
+  .student-list-item .actions {
+    margin-left: auto;
+  }
+  
+  .student-list-item .actions button {
+    margin-right: 8px;
+  }
