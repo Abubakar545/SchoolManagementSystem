@@ -1,3 +1,4 @@
+// StudentController.java
 package com.azka.schoolmanagementsystem.controllers;
 
 import com.azka.schoolmanagementsystem.entities.Student;
@@ -8,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,7 @@ public class StudentController {
             @ApiResponse(responseCode = "201", description = "Student created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Student.class))),
             @ApiResponse(responseCode = "400", description = "Invalid request body", content = @Content)
     })
-    public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
+    public ResponseEntity<Student> saveStudent(@Valid @RequestBody Student student) {
         Student savedStudent = studentService.saveStudent(student);
         return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
     }
@@ -44,11 +46,11 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "Get specific Student", description = "Retrieves Student by id")
-    @ApiResponse(responseCode = "200", description = "Gets Student By ID", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Student.class)))
+    @Operation(summary = "Get specific student", description = "Retrieves student by id")
+    @ApiResponse(responseCode = "200", description = "Gets student By ID", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Student.class)))
     public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
-        Optional<Student> Student = studentService.getStudentById(id);
-        return Student.map(ResponseEntity::ok)
+        Optional<Student> student = studentService.getStudentById(id);
+        return student.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -59,13 +61,13 @@ public class StudentController {
             @ApiResponse(responseCode = "400", description = "Invalid request body", content = @Content),
             @ApiResponse(responseCode = "404", description = "Student not found", content = @Content)
     })
-    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student student) {
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @Valid @RequestBody Student student) {
         Student updatedStudent = studentService.updateStudent(id, student);
-        return ResponseEntity.ok(updatedStudent);
+        return updatedStudent != null ? ResponseEntity.ok(updatedStudent) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Delete a student", description = "Deletes an existing student")
+    @Operation(summary = "Delete a Student", description = "Deletes an existing Student")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Student deleted successfully", content = @Content),
             @ApiResponse(responseCode = "404", description = "Student not found", content = @Content)
@@ -74,5 +76,4 @@ public class StudentController {
         studentService.deleteStudent(id);
         return ResponseEntity.noContent().build();
     }
-
 }

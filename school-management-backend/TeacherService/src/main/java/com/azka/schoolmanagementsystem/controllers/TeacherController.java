@@ -7,9 +7,11 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +30,10 @@ public class TeacherController {
             @ApiResponse(responseCode = "201", description = "Teacher created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Teacher.class))),
             @ApiResponse(responseCode = "400", description = "Invalid request body", content = @Content)
     })
-    public ResponseEntity<Teacher> saveTeacher(@RequestBody Teacher teacher) {
+    public ResponseEntity<Teacher> saveTeacher(@Valid @RequestBody Teacher teacher, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().build();
+        }
         Teacher savedTeacher = teacherService.saveTeacher(teacher);
         return new ResponseEntity<>(savedTeacher, HttpStatus.CREATED);
     }
@@ -57,7 +62,10 @@ public class TeacherController {
             @ApiResponse(responseCode = "400", description = "Invalid request body", content = @Content),
             @ApiResponse(responseCode = "404", description = "Teacher not found", content = @Content)
     })
-    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {
+    public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @Valid @RequestBody Teacher teacher, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().build();
+        }
         Teacher updatedTeacher = teacherService.updateTeacher(id, teacher);
         return ResponseEntity.ok(updatedTeacher);
     }
@@ -72,5 +80,4 @@ public class TeacherController {
         teacherService.deleteTeacher(id);
         return ResponseEntity.noContent().build();
     }
-
 }

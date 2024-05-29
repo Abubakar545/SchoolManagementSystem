@@ -21,6 +21,10 @@ spring:
           uri: lb://TEACHER-SERVICE
           predicates:
             - Path=/api/teachers/**
+        - id: parent-service
+          uri: lb://PARENT-SERVICE
+          predicates:
+            - Path=/api/parents/**
 
 management:
   endpoints:
@@ -36,7 +40,7 @@ management:
 
 info:
   app:
-    name: "gatewayserver"
+    name: "APIGateway"
     description: "School Management Service Gateway Server Application"
     version: "1.0.0"
 

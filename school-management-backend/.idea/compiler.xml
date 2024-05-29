@@ -11,6 +11,7 @@
         <module name="TeacherService" />
         <module name="ServiceRegistry" />
         <module name="ConfigServer" />
+        <module name="ParentService" />
         <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
+      <module name="ParentService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
       <module name="StudentService" options="-parameters" />
       <module name="TeacherService" options="-parameters" />
