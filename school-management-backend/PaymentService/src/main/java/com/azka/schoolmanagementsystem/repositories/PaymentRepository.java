@@ -1,10 +1,8 @@
 package com.azka.schoolmanagementsystem.repositories;
 
+import com.azka.schoolmanagementsystem.entities.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.azka.schoolmanagementsystem.entities.Parent;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ParentRepository extends JpaRepository<Parent, Long> {
-
-}
+public interface PaymentRepository extends JpaRepository<Payment, Long> {}

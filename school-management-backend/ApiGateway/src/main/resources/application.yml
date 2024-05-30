@@ -25,6 +25,14 @@ spring:
           uri: lb://PARENT-SERVICE
           predicates:
             - Path=/api/parents/**
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/api/payments/**
+        - id: transportation-service
+          uri: lb://TRANSPORTATION-SERVICE
+          predicates:
+            - Path=/api/transportation/**
 
 management:
   endpoints:
