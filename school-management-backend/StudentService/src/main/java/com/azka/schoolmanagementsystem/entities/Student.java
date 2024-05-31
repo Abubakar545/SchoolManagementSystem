@@ -81,4 +81,5 @@ public class Student {
     @NotBlank(message = "Image URL is required")
     @Column(nullable = false)
     private String imageUrl;
+
 }

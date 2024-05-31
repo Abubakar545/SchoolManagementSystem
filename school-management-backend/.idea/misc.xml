@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/ParentService/pom.xml" />
         <option value="$PROJECT_DIR$/PaymentService/pom.xml" />
         <option value="$PROJECT_DIR$/TransportationService/pom.xml" />
+        <option value="$PROJECT_DIR$/AttendanceService/pom.xml" />
+        <option value="$PROJECT_DIR$/GeneralSettingsService/pom.xml" />
       </list>
     </option>
   </component>

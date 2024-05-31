@@ -86,4 +86,6 @@ public class Teacher {
     @Column(name = "document")
     private List<String> submittedDocuments;
 
+    private String subject;
+
 }

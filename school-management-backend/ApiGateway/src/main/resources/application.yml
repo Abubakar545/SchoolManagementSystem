@@ -33,6 +33,14 @@ spring:
           uri: lb://TRANSPORTATION-SERVICE
           predicates:
             - Path=/api/transportation/**
+        - id: attendance-service
+          uri: lb://ATTENDANCE-SERVICE
+          predicates:
+            - Path=/api/attendance/**
+        - id: general-settings-service
+          uri: lb://GENERAL-SETTINGS-SERVICE
+          predicates:
+            - Path=/api/general-settings/**
 
 management:
   endpoints:

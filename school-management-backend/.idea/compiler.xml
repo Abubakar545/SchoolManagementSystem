@@ -8,7 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TeacherService" />
+        <module name="GeneralSettingsService" />
         <module name="ParentService" />
+        <module name="AttendanceService" />
         <module name="TransportationService" />
         <module name="StudentService" />
         <module name="ServiceRegistry" />
@@ -21,7 +23,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
+      <module name="AttendanceService" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
+      <module name="GeneralSettingsService" options="-parameters" />
       <module name="ParentService" options="-parameters" />
       <module name="PaymentService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
