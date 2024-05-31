@@ -5,6 +5,9 @@
     <file url="file://$PROJECT_DIR$/AttendanceService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConfigServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GeneralSettingsService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HallService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HolidayService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NoticeService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ParentService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PaymentService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ServiceRegistry/src/main/java" charset="UTF-8" />

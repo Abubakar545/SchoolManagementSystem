@@ -5,7 +5,7 @@ spring:
   application:
     name: API-GATEWAY
   config:
-    import: "optional:configserver:http://localhost:8091/"
+    import: "optional:configserver:http://localhost:8098/"
   cloud:
     gateway:
       discovery:
@@ -41,6 +41,18 @@ spring:
           uri: lb://GENERAL-SETTINGS-SERVICE
           predicates:
             - Path=/api/general-settings/**
+        - id: holiday-service
+          uri: lb://HOLIDAY-SERVICE
+          predicates:
+            - Path=/api/holidays/**
+        - id: hall-service
+          uri: lb://HALL-SERVICE
+          predicates:
+            - Path=/api/halls/**
+        - id: notice-service
+          uri: lb://NOTICE-SERVICE
+          predicates:
+            - Path=/api/notices/**
 
 management:
   endpoints:
@@ -73,4 +85,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: "http://localhost:8090/eureka/"
+      defaultZone: "http://localhost:8099/eureka/"

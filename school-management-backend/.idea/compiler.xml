@@ -7,15 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="NoticeService" />
         <module name="TeacherService" />
+        <module name="HolidayService" />
+        <module name="StudentService" />
+        <module name="ApiGateway" />
         <module name="GeneralSettingsService" />
         <module name="ParentService" />
         <module name="AttendanceService" />
         <module name="TransportationService" />
-        <module name="StudentService" />
         <module name="ServiceRegistry" />
         <module name="ConfigServer" />
-        <module name="ApiGateway" />
+        <module name="HallService" />
         <module name="PaymentService" />
       </profile>
     </annotationProcessing>
@@ -26,6 +29,9 @@
       <module name="AttendanceService" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="GeneralSettingsService" options="-parameters" />
+      <module name="HallService" options="-parameters" />
+      <module name="HolidayService" options="-parameters" />
+      <module name="NoticeService" options="-parameters" />
       <module name="ParentService" options="-parameters" />
       <module name="PaymentService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />

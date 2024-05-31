@@ -1,6 +1,6 @@
 package com.azka.schoolmanagementsystem.respositories;
 
-import com.azka.schoolmanagementsystem.entities.Driver;
+import com.azka.schoolmanagementsystem.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

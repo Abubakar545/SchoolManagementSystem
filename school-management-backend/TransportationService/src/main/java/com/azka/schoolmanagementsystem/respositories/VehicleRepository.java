@@ -1,6 +1,6 @@
 package com.azka.schoolmanagementsystem.respositories;
 
-import com.azka.schoolmanagementsystem.entities.Vehicle;
+import com.azka.schoolmanagementsystem.entity.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
