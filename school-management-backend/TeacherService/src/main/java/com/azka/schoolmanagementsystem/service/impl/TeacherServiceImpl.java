@@ -1,7 +1,7 @@
 package com.azka.schoolmanagementsystem.service.impl;
 
 import com.azka.schoolmanagementsystem.entity.Teacher;
-import com.azka.schoolmanagementsystem.exceptions.ResourceNotFoundException;
+import com.azka.schoolmanagementsystem.exception.ResourceNotFoundException;
 import com.azka.schoolmanagementsystem.respositories.TeacherRepository;
 import com.azka.schoolmanagementsystem.service.TeacherService;
 import jakarta.validation.ConstraintViolation;

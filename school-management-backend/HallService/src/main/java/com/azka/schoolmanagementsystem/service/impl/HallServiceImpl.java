@@ -1,7 +1,7 @@
 package com.azka.schoolmanagementsystem.service.impl;
 
 import com.azka.schoolmanagementsystem.entity.Hall;
-import com.azka.schoolmanagementsystem.repositories.HallRepository;
+import com.azka.schoolmanagementsystem.repository.HallRepository;
 import com.azka.schoolmanagementsystem.service.HallService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

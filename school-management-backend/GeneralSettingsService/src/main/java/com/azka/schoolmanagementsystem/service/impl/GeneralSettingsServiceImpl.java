@@ -1,7 +1,7 @@
 package com.azka.schoolmanagementsystem.service.impl;
 
 import com.azka.schoolmanagementsystem.entity.GeneralSettings;
-import com.azka.schoolmanagementsystem.repositories.GeneralSettingsRepository;
+import com.azka.schoolmanagementsystem.repository.GeneralSettingsRepository;
 import com.azka.schoolmanagementsystem.service.GeneralSettingsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

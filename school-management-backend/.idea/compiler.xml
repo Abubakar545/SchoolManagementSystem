@@ -8,14 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NoticeService" />
+        <module name="GradeService" />
         <module name="TeacherService" />
         <module name="HolidayService" />
         <module name="StudentService" />
+        <module name="MigrationService" />
         <module name="ApiGateway" />
         <module name="GeneralSettingsService" />
         <module name="ParentService" />
         <module name="AttendanceService" />
         <module name="TransportationService" />
+        <module name="MarkService" />
         <module name="ServiceRegistry" />
         <module name="ConfigServer" />
         <module name="HallService" />
@@ -29,8 +32,11 @@
       <module name="AttendanceService" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="GeneralSettingsService" options="-parameters" />
+      <module name="GradeService" options="-parameters" />
       <module name="HallService" options="-parameters" />
       <module name="HolidayService" options="-parameters" />
+      <module name="MarkService" options="-parameters" />
+      <module name="MigrationService" options="-parameters" />
       <module name="NoticeService" options="-parameters" />
       <module name="ParentService" options="-parameters" />
       <module name="PaymentService" options="-parameters" />

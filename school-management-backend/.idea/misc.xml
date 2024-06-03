@@ -18,6 +18,9 @@
         <option value="$PROJECT_DIR$/HolidayService/pom.xml" />
         <option value="$PROJECT_DIR$/HallService/pom.xml" />
         <option value="$PROJECT_DIR$/NoticeService/pom.xml" />
+        <option value="$PROJECT_DIR$/MigrationService/pom.xml" />
+        <option value="$PROJECT_DIR$/GradeService/pom.xml" />
+        <option value="$PROJECT_DIR$/MarkService/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,8 +1,8 @@
 package com.azka.schoolmanagementsystem.service.impl;
 
 import com.azka.schoolmanagementsystem.entity.Payment;
-import com.azka.schoolmanagementsystem.exceptions.ResourceNotFoundException;
-import com.azka.schoolmanagementsystem.repositories.PaymentRepository;
+import com.azka.schoolmanagementsystem.exception.ResourceNotFoundException;
+import com.azka.schoolmanagementsystem.repository.PaymentRepository;
 import com.azka.schoolmanagementsystem.service.PaymentService;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;

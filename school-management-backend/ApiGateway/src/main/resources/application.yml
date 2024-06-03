@@ -53,6 +53,19 @@ spring:
           uri: lb://NOTICE-SERVICE
           predicates:
             - Path=/api/notices/**
+        - id: migration-service
+          uri: lb://MIGRATION-SERVICE
+          predicates:
+            - Path=/api/migration/**
+        - id: grade-service
+          uri: lb://GRADE-SERVICE
+          predicates:
+            - Path=/api/grades/**
+        - id: mark-service
+          uri: lb://MARK-SERVICE
+          predicates:
+            - Path=/api/marks/**
+
 
 management:
   endpoints:
