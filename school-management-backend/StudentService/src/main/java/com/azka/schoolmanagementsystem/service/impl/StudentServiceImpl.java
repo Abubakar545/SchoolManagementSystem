@@ -23,8 +23,10 @@ public class StudentServiceImpl implements StudentService {
 
     private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
 
+
     @Autowired
-    private final StudentRepository studentRepository;
+    private  StudentRepository studentRepository;
+
 
     @Override
     @Transactional
